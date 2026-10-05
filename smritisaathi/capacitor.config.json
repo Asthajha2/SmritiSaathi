@@ -1,0 +1,1 @@
+{"appId":"in.quadspark.smritisaathi","appName":"SmritiSaathi","webDir":"dist","plugins":{"CapacitorHttp":{"enabled":true},"LocalNotifications":{"smallIcon":"ic_stat_smriti","iconColor":"#165c50"}},"android":{"allowMixedContent":false}}

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: smritisaathi
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: APP_ORIGIN
+        sync: false
+      - key: DATABASE_PATH
+        value: /app/data/smritisaathi.db
+    disk:
+      name: smriti-data
+      mountPath: /app/data
+      sizeGB: 1

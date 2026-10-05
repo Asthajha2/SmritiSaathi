@@ -1,0 +1,5 @@
+export const gameIds=['memory','pattern','sequence','routine','family','detail','tune','arithmetic','attention','garden'];
+export function nextDifficulty(history,current=1){const recent=history.slice(-3);if(recent.length<3)return current;const accuracy=recent.reduce((s,x)=>s+x.accuracy,0)/3;const latency=recent.reduce((s,x)=>s+x.latency,0)/3;return Math.max(1,Math.min(5,current+(accuracy>=.8&&latency<15000?1:accuracy<.5?-1:0)));}
+export function distanceMetres(a,b){const r=x=>x*Math.PI/180;const dLat=r(b.lat-a.lat),dLon=r(b.lng-a.lng);const h=Math.sin(dLat/2)**2+Math.cos(r(a.lat))*Math.cos(r(b.lat))*Math.sin(dLon/2)**2;return 6371000*2*Math.atan2(Math.sqrt(h),Math.sqrt(Math.max(0,1-h)));}
+export function outsideZone(position,place){return distanceMetres(position,place)-position.accuracy>place.radius;}
+export function trend(scores){if(scores.length<6)return null;const ordered=[...scores].sort((a,b)=>a.at-b.at);const avg=a=>a.reduce((s,x)=>s+x.accuracy,0)/a.length;return Math.round((avg(ordered.slice(-3))-avg(ordered.slice(-6,-3)))*100);}

@@ -1,0 +1,3 @@
+import {Apple,Cherry,Grape,Citrus,Carrot,Flower2,Leaf,TreePine,Sun,Moon,Cloud,Snowflake,Umbrella,Heart,Star,Gem,Gift,Music,Bell,KeyRound,Coffee,BookOpen,Bird,Fish,Shell,Bug,Send,Flame,Sprout,CakeSlice,Crown,Clover} from 'lucide-react';
+const icons={apple:Apple,cherry:Cherry,grape:Grape,citrus:Citrus,carrot:Carrot,flower:Flower2,leaf:Leaf,tree:TreePine,sun:Sun,moon:Moon,cloud:Cloud,snow:Snowflake,umbrella:Umbrella,heart:Heart,star:Star,gem:Gem,gift:Gift,music:Music,bell:Bell,key:KeyRound,cup:Coffee,book:BookOpen,bird:Bird,fish:Fish,shell:Shell,butterfly:Bug,kite:Send,flame:Flame,sprout:Sprout,cake:CakeSlice,crown:Crown,clover:Clover};
+export default function GardenSymbol({name,...props}){const Icon=icons[name]||Flower2;return <Icon strokeWidth={1.8} {...props}/>;}
